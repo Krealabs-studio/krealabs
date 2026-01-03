@@ -819,23 +819,25 @@
 
     </main>
 
-    <footer
-        class="w-full max-w-7xl mx-auto px-4 pb-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray uppercase tracking-widest">
-        <div class="mb-4 md:mb-0">
-            &copy; 2026 Krea Labs Studio // All Rights Reserved.
+    <footer class="w-full max-w-7xl mx-auto px-4 pb-8 flex flex-col gap-12 text-xs text-gray uppercase tracking-widest mt-12">
+        <!-- Socials Section -->
+        <div class="flex flex-col md:flex-row justify-between items-start border-t pt-8" style="border-color: #262626;">
+            <div class="mb-8 md:mb-0">
+                <span class="block text-white mb-4">// Connect</span>
+                <p class="max-w-xs text-light-gray">Follow our latest research and visual experiments.</p>
+            </div>
+            <div id="socials-grid" class="flex flex-col md:flex-row gap-8 md:gap-16">
+                <!-- Content rendered from data.js -->
+            </div>
         </div>
-        <div class="flex flex-col md:flex-row gap-4 md:items-center">
+
+        <!-- Copyright -->
+        <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t" style="border-color: #262626;">
             <div>
-                Instagram &rarr; <a href="https://instagram.com/krealabs.studio" target="_blank"
-                    class="hover-white transition-colors border-b border-transparent hover-border-white pb-0.5">@krealabs.studio</a>
+                &copy; 2026 Krea Labs // All Rights Reserved.
             </div>
-            <div>
-                Creative Work &rarr; <a href="https://instagram.com/kreatifminds.co" target="_blank"
-                    class="hover-white transition-colors border-b border-transparent hover-border-white pb-0.5">@kreatifminds.co</a>
-            </div>
-            <div>
-                Photography &rarr; <a href="https://instagram.com/kreatifminds.studio" target="_blank"
-                    class="hover-white transition-colors border-b border-transparent hover-border-white pb-0.5">@kreatifminds.studio</a>
+            <div class="mt-4 md:mt-0 opacity-50">
+                System Status: Nominal
             </div>
         </div>
     </footer>
@@ -864,6 +866,18 @@
                         <h4 class="text-sm font-bold uppercase text-white">${member.name}</h4>
                         <span class="text-xs ${member.roleColor || 'text-gray'} block mb-2 tracking-widest">${member.role}</span>
                         <p class="text-xs text-gray mt-4">${member.description}</p>
+                    </div>
+                `).join('');
+            }
+
+            const socialsContainer = document.getElementById('socials-grid');
+            if (typeof socials !== 'undefined' && socialsContainer) {
+                socialsContainer.innerHTML = socials.map(social => `
+                    <div>
+                        <span class="block text-gray mb-2">${social.label} &rarr;</span>
+                        <a href="${social.url}" target="_blank" class="text-white hover-text-light-gray border-b border-transparent hover:border-white transition-all pb-1">
+                            ${social.handle}
+                        </a>
                     </div>
                 `).join('');
             }

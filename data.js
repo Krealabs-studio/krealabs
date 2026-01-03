@@ -59,3 +59,21 @@ const team = [
         description: "Focuses on computer vision and edge device development."
     }
 ];
+
+const socials = [
+    {
+        label: "Instagram",
+        handle: "@krealabs.studio",
+        url: "https://instagram.com/krealabs.studio"
+    },
+    {
+        label: "Creative Work",
+        handle: "@kreatifminds.co",
+        url: "https://instagram.com/kreatifminds.co"
+    },
+    {
+        label: "Photography",
+        handle: "@kreatifminds.studio",
+        url: "https://instagram.com/kreatifminds.studio"
+    }
+];
