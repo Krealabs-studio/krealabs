@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krea Labs | Architecting the Future</title>
+
+    <!-- Google Fonts: Space Mono for that technical/blueprint aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Design Tokens */
+            --krea-black: #050505;
+            --krea-dark: #0a0a0a;
+            --krea-border: #333333;
+            --krea-white: #F0F0F0;
+            --krea-gray: #737373;
+            /* neutral-500 */
+            --krea-light-gray: #a3a3a3;
+            /* neutral-400 */
+            --krea-red: #dc2626;
+
+            --font-mono: 'Space Mono', monospace;
+            --spacing-unit: 8px;
+            /* Base unit */
+        }
+
+        /* Reset & Base Styles */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--krea-black);
+            color: var(--krea-white);
+            font-family: var(--font-mono);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            border: none;
+            background: none;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        /* Typography */
+        .text-xs {
+            font-size: 0.75rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .text-base {
+            font-size: 1rem;
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+        }
+
+        .text-6xl {
+            font-size: 3.75rem;
+        }
+
+        .text-8xl {
+            font-size: 6rem;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .tracking-widest {
+            letter-spacing: 0.1em;
+        }
+
+        .tracking-tighter {
+            letter-spacing: -0.05em;
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .text-gray {
+            color: var(--krea-gray);
+        }
+
+        .text-light-gray {
+            color: var(--krea-light-gray);
+        }
+
+        .text-red {
+            color: var(--krea-red);
+        }
+
+        /* Layout Utilities */
+        .w-full {
+            width: 100%;
+        }
+
+        .max-w-7xl {
+            max-width: 80rem;
+        }
+
+        .max-w-xl {
+            max-width: 36rem;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .flex-grow {
+            flex-grow: 1;
+        }
+
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .gap-8 {
+            gap: 2rem;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        .border-b {
+            border-bottom: 1px solid var(--krea-border);
+        }
+
+        .border-t {
+            border-top: 1px solid var(--krea-border);
+        }
+
+        .border-l {
+            border-left: 1px solid var(--krea-border);
+        }
+
+        .border-r {
+            border-right: 1px solid var(--krea-border);
+        }
+
+        .border-x {
+            border-left: 1px solid var(--krea-border);
+            border-right: 1px solid var(--krea-border);
+        }
+
+        .border {
+            border: 1px solid var(--krea-border);
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .p-6 {
+            padding: 1.5rem;
+        }
+
+        .p-8 {
+            padding: 2rem;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-12 {
+            margin-bottom: 3rem;
+        }
+
+        .mt-12 {
+            margin-top: 3rem;
+        }
+
+        .pl-4 {
+            padding-left: 1rem;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .sticky {
+            position: sticky;
+        }
+
+        .top-0 {
+            top: 0;
+        }
+
+        .z-40 {
+            z-index: 40;
+        }
+
+        .z-50 {
+            z-index: 50;
+        }
+
+        /* Specific Components */
+
+        /* Header */
+        header {
+            background-color: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(4px);
+        }
+
+        /* Hero */
+        .hero-section {
+            min-height: 80vh;
+            text-align: center;
+        }
+
+        .hero-title {
+            mix-blend-mode: difference;
+        }
+
+        /* Button */
+        .btn-enter {
+            position: relative;
+            background: transparent;
+            border: 1px solid var(--krea-white);
+            color: var(--krea-white);
+            transition: all 0.3s ease;
+        }
+
+        .btn-enter:hover {
+            background: var(--krea-white);
+            color: var(--krea-black);
+        }
+
+        .btn-corner-tl,
+        .btn-corner-br {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--krea-white);
+            transition: width 0.3s ease;
+        }
+
+        .btn-enter:hover .btn-corner-tl,
+        .btn-enter:hover .btn-corner-br {
+            width: 100%;
+        }
+
+        .btn-corner-tl {
+            top: 0;
+            left: 0;
+        }
+
+        .btn-corner-br {
+            bottom: 0;
+            right: 0;
+        }
+
+        /* The Blueprint Grid (replacing Gap Trick for more control) */
+        .blueprint-grid {
+            border: 1px solid var(--krea-border);
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .service-card {
+            background-color: var(--krea-black);
+            padding: 2rem;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid transparent;
+            /* To create the grid lines feeling, we rely on the container background or explicit borders. 
+               Let's specific explicit internal borders for responsiveness. */
+            border-bottom: 1px solid var(--krea-border);
+            transition: background-color 0.3s ease;
+        }
+
+        .service-card:last-child {
+            border-bottom: none;
+        }
+
+        .service-card:hover {
+            background-color: var(--krea-dark);
+            border-color: var(--krea-white);
+        }
+
+        /* Crosshairs */
+        .crosshair::before,
+        .crosshair::after {
+            content: '';
+            position: absolute;
+            background-color: var(--krea-white);
+            z-index: 10;
+        }
+
+        .crosshair-tl::before {
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 1px;
+        }
+
+        .crosshair-tl::after {
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 10px;
+        }
+
+        .crosshair-br::before {
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 1px;
+        }
+
+        .crosshair-br::after {
+            bottom: 0;
+            right: 0;
+            width: 1px;
+            height: 10px;
+        }
+
+        /* Animations */
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+
+        /* Scanlines */
+        .scanlines {
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0),
+                    rgba(255, 255, 255, 0) 50%,
+                    rgba(0, 0, 0, 0.2) 50%,
+                    rgba(0, 0, 0, 0.2));
+            background-size: 100% 4px;
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.3;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 768px) {
+            .md\:grid-cols-12 {
+                grid-template-columns: repeat(12, minmax(0, 1fr));
+            }
+
+            .md\:col-span-3 {
+                grid-column: span 3 / span 3;
+            }
+
+            .md\:col-span-9 {
+                grid-column: span 9 / span 9;
+            }
+
+            .md\:flex-row {
+                flex-direction: row;
+            }
+
+            .md\:text-8xl {
+                font-size: 6rem;
+            }
+
+            .md\:text-4xl {
+                font-size: 2.25rem;
+            }
+
+            .md\:text-lg {
+                font-size: 1.125rem;
+            }
+
+            .md\:border-b-0 {
+                border-bottom-width: 0;
+            }
+
+            .md\:border-r {
+                border-right-width: 1px;
+            }
+
+            .md\:p-16 {
+                padding: 4rem;
+            }
+
+            .md\:min-h-\[400px\] {
+                min-height: 400px;
+            }
+
+            .blueprint-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .service-card {
+                border-bottom: none;
+                border-right: 1px solid var(--krea-border);
+            }
+
+            .service-card:last-child {
+                border-right: none;
+            }
+
+            .rotate-text {
+                transform: rotate(-90deg);
+                white-space: nowrap;
+            }
+        }
+
+        /* Utilities that need semantic class names */
+        .hover-white:hover {
+            color: var(--krea-white);
+        }
+
+        .hover-border-white:hover {
+            border-color: var(--krea-white);
+        }
+
+        .hover-bg-dark:hover {
+            background-color: var(--krea-dark);
+        }
+
+        /* Icon placeholders */
+        .icon-box {
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid #525252;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .icon-box {
+            background-color: var(--krea-white);
+            border-color: var(--krea-white);
+        }
+
+        .icon-dot {
+            width: 4px;
+            height: 4px;
+            background-color: var(--krea-white);
+        }
+
+        .service-card:hover .icon-dot {
+            background-color: var(--krea-black);
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Cursor */
+        @media (hover: hover) and (pointer: fine) {
+            body {
+                cursor: none;
+            }
+
+            .custom-cursor {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 24px;
+                height: 24px;
+                pointer-events: none;
+                z-index: 9999;
+                transform: translate(-50%, -50%);
+                mix-blend-mode: difference;
+                transition: transform 0.1s ease;
+            }
+
+            .custom-cursor::before,
+            .custom-cursor::after {
+                content: '';
+                position: absolute;
+                background: white;
+            }
+
+            .custom-cursor::before {
+                top: 50%;
+                left: 0;
+                width: 100%;
+                height: 1px;
+            }
+
+            .custom-cursor::after {
+                left: 50%;
+                top: 0;
+                height: 100%;
+                width: 1px;
+            }
+        }
+
+        /* Interactive Grid Highlight */
+        #grid-highlight {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            background: radial-gradient(circle 400px at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.05), transparent);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Scanline Overlay -->
+    <div class="scanlines"></div>
+    <div id="grid-highlight"></div>
+
+    <!-- Navigation / Top Bar -->
+    <header class="w-full border-b flex justify-between items-center px-4 py-3 sticky top-0 z-40">
+        <div class="text-xs uppercase tracking-widest text-gray">
+            System: Online
+        </div>
+        <div class="text-xs uppercase tracking-widest text-gray">
+            <span id="clock">00:00:00</span> MEL
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-7xl mx-auto border-x mb-12">
+
+        <!-- Hero Section -->
+        <section
+            class="hero-section flex flex-col justify-center items-center p-8 relative border-b crosshair crosshair-tl crosshair-br">
+            <div class="absolute top-0 left-0 p-4 text-xs text-light-gray uppercase tracking-widest">Fig 1.0 // Identity
+            </div>
+
+            <h1 class="text-4xl md:text-8xl font-bold tracking-tighter mb-4 uppercase hero-title">
+                Krea Labs<span class="text-red">.</span>
+            </h1>
+
+            <p class="text-sm md:text-lg text-light-gray max-w-xl mb-12 tracking-widest hero-subtext">
+                [ We architect the future, one layer at a time. ]
+            </p>
+
+            <button onclick="scrollToLab()" class="btn-enter text-sm uppercase px-8 py-4 tracking-widest">
+                <span class="btn-corner-tl"></span>
+                <span class="btn-corner-br"></span>
+                Enter the Lab <span class="cursor-blink">_</span>
+            </button>
+
+            <!-- Grid Background -->
+            <div class="absolute top-0 left-0 w-full h-full"
+                style="z-index: -1; opacity: 0.1; background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px); background-size: 40px 40px;">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="grid grid-cols-1 md:grid-cols-12 border-b">
+            <div
+                class="md:col-span-3 border-b md:border-b-0 md:border-r p-6 flex items-center justify-center md:justify-start">
+                <span class="text-xs text-gray uppercase rotate-text tracking-widest">
+                    Section 01 : Manifesto
+                </span>
+            </div>
+            <div class="md:col-span-9 p-8 md:p-16 reveal">
+                <h2 class="text-2xl md:text-4xl uppercase font-bold text-white mb-6">
+                    From scratch to scale. <br>
+                    <span class="text-gray">We are a one-stop engineering lab building complex ideas from the ground
+                        up.</span>
+                </h2>
+                <div class="flex flex-col md:flex-row gap-8 mt-12 text-xs text-light-gray">
+                    <div class="flex-grow border-l pl-4" style="border-color: #262626;">
+                        <strong class="text-white block mb-2">// MISSION</strong>
+                        To bridge the gap between abstract innovation and tangible industrial application.
+                    </div>
+                    <div class="flex-grow border-l pl-4" style="border-color: #262626;">
+                        <strong class="text-white block mb-2">// STATUS</strong>
+                        Ready for deployment. All systems nominal.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid (The Pillars) -->
+        <section class="border-b">
+            <div class="p-4 border-b" style="background-color: rgba(23, 23, 23, 0.3);">
+                <h3 class="text-xs uppercase tracking-widest text-light-gray">Fig 2.0 // Capabilities</h3>
+            </div>
+
+            <div class="blueprint-grid">
+
+                <!-- Service 1 -->
+                <article class="service-card group relative reveal">
+                    <div class="absolute top-0 right-0 p-4 text-gray group-hover:text-white transition-colors">01</div>
+                    <div>
+                        <div class="icon-box">
+                            <div class="icon-dot"></div>
+                        </div>
+                        <h3 class="text-xl uppercase font-bold mb-2" style="transition: transform 0.3s;"
+                            onmouseover="this.style.transform='translateX(8px)'"
+                            onmouseout="this.style.transform='translateX(0)'">Hard Tech</h3>
+                        <div style="height: 1px; width: 32px; background-color: #404040; transition: all 0.5s;"
+                            class="group-hover:w-16 group-hover:bg-white mb-4"></div>
+                    </div>
+                    <ul class="text-sm text-gray gap-2 flex flex-col group-hover:text-light-gray transition-colors">
+                        <li>/ CAD Engineering</li>
+                        <li>/ Industrial Design</li>
+                        <li>/ Hardware Integration</li>
+                    </ul>
+                </article>
+
+                <!-- Service 2 -->
+                <article class="service-card group relative reveal">
+                    <div class="absolute top-0 right-0 p-4 text-gray group-hover:text-white transition-colors">02</div>
+                    <div>
+                        <div class="icon-box">
+                            <div class="flex gap-1">
+                                <div class="icon-dot h-2 w-0.5"></div>
+                                <div class="icon-dot h-3 w-0.5"></div>
+                                <div class="icon-dot h-1 w-0.5"></div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl uppercase font-bold mb-2" style="transition: transform 0.3s;"
+                            onmouseover="this.style.transform='translateX(8px)'"
+                            onmouseout="this.style.transform='translateX(0)'">Soft Tech</h3>
+                        <div style="height: 1px; width: 32px; background-color: #404040; transition: all 0.5s;"
+                            class="group-hover:w-16 group-hover:bg-white mb-4"></div>
+                    </div>
+                    <ul class="text-sm text-gray gap-2 flex flex-col group-hover:text-light-gray transition-colors">
+                        <li>/ Artificial Intelligence</li>
+                        <li>/ Full-Stack Web</li>
+                        <li>/ Digital Innovation</li>
+                    </ul>
+                </article>
+
+                <!-- Service 3 -->
+                <article class="service-card group relative reveal">
+                    <div class="absolute top-0 right-0 p-4 text-gray group-hover:text-white transition-colors">03</div>
+                    <div>
+                        <div class="icon-box">
+                            <div style="width: 12px; height: 12px; border: 1px solid white; border-radius: 50%;"></div>
+                        </div>
+                        <h3 class="text-xl uppercase font-bold mb-2" style="transition: transform 0.3s;"
+                            onmouseover="this.style.transform='translateX(8px)'"
+                            onmouseout="this.style.transform='translateX(0)'">The Lab</h3>
+                        <div style="height: 1px; width: 32px; background-color: #404040; transition: all 0.5s;"
+                            class="group-hover:w-16 group-hover:bg-white mb-4"></div>
+                    </div>
+                    <ul class="text-sm text-gray gap-2 flex flex-col group-hover:text-light-gray transition-colors">
+                        <li>/ Rapid Prototyping</li>
+                        <li>/ Process Optimization</li>
+                        <li>/ R&D Consulting</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Projects Section (Operations) -->
+        <section class="border-b relative crosshair crosshair-tl crosshair-br" id="projects">
+            <div class="p-4 border-b" style="background-color: rgba(23, 23, 23, 0.3);">
+                <h3 class="text-xs uppercase tracking-widest text-light-gray">Fig 3.0 // Active Operations</h3>
+            </div>
+
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3">
+                <!-- Content rendered from data.js -->
+            </div>
+        </section>
+
+        <!-- Personnel Section (The Architects) -->
+        <section class="border-b relative crosshair crosshair-tl crosshair-br" id="team">
+            <div class="grid grid-cols-1 md:grid-cols-12">
+                <div
+                    class="md:col-span-3 border-b md:border-b-0 md:border-r p-6 flex items-center justify-center md:justify-start">
+                    <span class="text-xs text-gray uppercase rotate-text tracking-widest">
+                        Section 03 : Personnel
+                    </span>
+                </div>
+
+                <div class="md:col-span-9">
+                    <div id="team-grid" class="grid grid-cols-1 md:grid-cols-3">
+                        <!-- Content rendered from data.js -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8"
+            style="background-color: rgba(23, 23, 23, 0.1);">
+            <div>
+                <h4 class="text-lg uppercase font-bold mb-2">Ready to initiate?</h4>
+                <p class="text-gray text-sm max-w-md">Our engineers are standing by to architect your next breakthrough.
+                </p>
+            </div>
+            <a href="mailto:kelvinchoo96@gmail.com"
+                class="px-6 py-3 border text-light-gray hover-white hover-bg-dark transition-all uppercase text-xs tracking-widest hover-border-white">
+                Contact Protocol ->
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="w-full max-w-7xl mx-auto px-4 pb-8 flex flex-col gap-12 text-xs text-gray uppercase tracking-widest mt-12">
+        <!-- Socials Section -->
+        <div class="flex flex-col md:flex-row justify-between items-start border-t pt-8" style="border-color: #262626;">
+            <div class="mb-8 md:mb-0">
+                <span class="block text-white mb-4">// Connect</span>
+                <p class="max-w-xs text-light-gray">Follow our latest research and visual experiments.</p>
+            </div>
+            <div id="socials-grid" class="flex flex-col md:flex-row gap-8 md:gap-16">
+                <!-- Content rendered from data.js -->
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t" style="border-color: #262626;">
+            <div>
+                &copy; 2026 Krea Labs // All Rights Reserved.
+            </div>
+            <div class="mt-4 md:mt-0 opacity-50">
+                System Status: Nominal
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script>
+        // Data Rendering Logic
+        function renderContent() {
+            const projectsContainer = document.getElementById('projects-grid');
+            const teamContainer = document.getElementById('team-grid');
+
+            if (typeof projects !== 'undefined' && projectsContainer) {
+                projectsContainer.innerHTML = projects.map(project => `
+                    <article class="p-8 border-b md:border-b-0 md:border-r border-krea-border hover-bg-dark transition-all group reveal">
+                        <span class="text-xs ${project.statusColor || 'text-gray'} block mb-4 tracking-widest">${project.status}</span>
+                        <h3 class="text-xl font-bold uppercase mb-2 text-white">${project.title}</h3>
+                        <p class="text-sm text-gray mb-6">${project.description}</p>
+                        <a href="${project.link}" class="text-xs uppercase tracking-widest text-light-gray group-hover:text-white border-b border-transparent group-hover:border-white pb-1 transition-all">${project.linkText}</a>
+                    </article>
+                `).join('');
+            }
+
+            if (typeof team !== 'undefined' && teamContainer) {
+                teamContainer.innerHTML = team.map(member => `
+                    <div class="p-8 border-b md:border-b-0 md:border-r border-krea-border hover-bg-dark transition-all reveal">
+                        <h4 class="text-sm font-bold uppercase text-white">${member.name}</h4>
+                        <span class="text-xs ${member.roleColor || 'text-gray'} block mb-2 tracking-widest">${member.role}</span>
+                        <p class="text-xs text-gray mt-4">${member.description}</p>
+                    </div>
+                `).join('');
+            }
+
+            const socialsContainer = document.getElementById('socials-grid');
+            if (typeof socials !== 'undefined' && socialsContainer) {
+                socialsContainer.innerHTML = socials.map(social => `
+                    <div>
+                        <span class="block text-gray mb-2">${social.label} &rarr;</span>
+                        <a href="${social.url}" target="_blank" class="text-white hover-text-light-gray border-b border-transparent hover:border-white transition-all pb-1">
+                            ${social.handle}
+                        </a>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Initial Render
+        renderContent();
+
+        // Modernization Logic
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Scroll Reveal
+            // Re-select all elements including dynamic ones
+            const observeElements = () => {
+                const revealElements = document.querySelectorAll('.reveal');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            // Add a small delay based on DOM order for staggering if needed, 
+                            // or just let them fade in naturally
+                            setTimeout(() => {
+                                entry.target.classList.add('active');
+                            }, 100);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+                revealElements.forEach(el => observer.observe(el));
+            };
+            observeElements();
+
+            // 2. Typing Effect for Hero Subtext
+            const heroText = document.querySelector('.hero-subtext');
+            if (heroText) {
+                const fullText = heroText.innerText;
+                heroText.innerText = ''; // Clear it
+                heroText.style.opacity = '1';
+
+                let i = 0;
+                function typeWriter() {
+                    if (i < fullText.length) {
+                        heroText.innerHTML += fullText.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 40); // Typing speed
+                    }
+                }
+                // Start after a small delay
+                setTimeout(typeWriter, 800);
+            }
+
+            // 3. Custom Cursor
+            if (window.matchMedia('(pointer: fine)').matches) {
+                const cursor = document.createElement('div');
+                cursor.className = 'custom-cursor';
+                document.body.appendChild(cursor);
+
+                let cursorX = 0;
+                let cursorY = 0;
+                let mouseX = 0;
+                let mouseY = 0;
+
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+
+                    // Update Grid Highlight
+                    const gridHighlight = document.getElementById('grid-highlight');
+                    if (gridHighlight) {
+                        gridHighlight.style.setProperty('--x', e.clientX + 'px');
+                        gridHighlight.style.setProperty('--y', e.clientY + 'px');
+                    }
+                });
+
+                // Smooth cursor animation
+                function animateCursor() {
+                    const dx = mouseX - cursorX;
+                    const dy = mouseY - cursorY;
+
+                    cursorX += dx * 0.2; // Smoothness factor
+                    cursorY += dy * 0.2;
+
+                    cursor.style.left = cursorX + 'px';
+                    cursor.style.top = cursorY + 'px';
+
+                    requestAnimationFrame(animateCursor);
+                }
+                animateCursor();
+
+                document.addEventListener('mousedown', () => {
+                    cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+                });
+
+                document.addEventListener('mouseup', () => {
+                    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                });
+            }
+        });
+
+        // Clock Functionality
+        function updateClock() {
+            const now = new Date();
+            const options = {
+                timeZone: 'Australia/Melbourne',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+            const timeString = new Intl.DateTimeFormat('en-GB', options).format(now);
+            document.getElementById('clock').textContent = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Scroll Functionality
+        function scrollToLab() {
+            const aboutSection = document.getElementById('about');
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Add coordinate tracking effect on service cards
+        const cards = document.querySelectorAll('.service-card');
+
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                // Optional: Add subtle coordinate or lighting effects here
+                // Keeping it clean as per "Vanilla" request
+            });
+        });
+    </script>
+</body>
+
+</html>
