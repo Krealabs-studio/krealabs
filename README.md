@@ -1,6 +1,6 @@
 # Krea Labs | Digital Blueprint
 
-![Krea Labs Banner](https://krealabs.studio/assets/banner.png) 
+![Krea Labs Banner](https://krealabs.studio/assets/Krealabs-black.svg) 
 *(Note: Replace with actual banner if available)*
 
 > **From scratch to scale.**
