@@ -1,7 +1,6 @@
 # Krea Labs | Digital Blueprint
 
-![Krea Labs Banner](https://krealabs.studio/assets/Krealabs-black.svg) 
-*(Note: Replace with actual banner if available)*
+![Krea Labs Banner](https://github.com/Krealabs-studio/krealabs/blob/main/Krealabs-black.svg) 
 
 > **From scratch to scale.**
 > We are a one-stop engineering lab building complex ideas from the ground up.
