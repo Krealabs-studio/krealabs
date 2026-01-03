@@ -31,16 +31,10 @@ window.projects = [
 
 window.team = [
     {
-        name: "Dr Kelvin Choo",
+        name: "Kelvin Choo",
         role: "AI Technical Specialist",
         roleColor: "text-red", // Highlight key roles
         description: "Specialises in optimisation, machine learning, deep learning, and AI."
-    },
-    {
-        name: "Dr Nicole Deng",
-        role: "Computer Vision Specialist",
-        roleColor: "text-red",
-        description: "Expert in image processing and computer vision."
     },
     {
         name: "Yuelin Liu",
@@ -59,6 +53,12 @@ window.team = [
         role: "Graduate Engineer",
         roleColor: "text-red",
         description: "Focuses on computer vision and edge device development."
+    },
+    {
+        name: "Michelle Lim",
+        role: "Creative Director",
+        roleColor: "text-red",
+        description: "Expert in creative direction and photography."
     }
 ];
 
