@@ -1,0 +1,26 @@
+{
+  "name": "krealabs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "echo 'Deploying to GitHub Pages...'",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krealabs-studio/krealabs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Krealabs-studio/krealabs/issues"
+  },
+  "homepage": "https://krealabs.studio",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
