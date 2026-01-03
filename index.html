@@ -819,7 +819,8 @@
 
     </main>
 
-    <footer class="w-full max-w-7xl mx-auto px-4 pb-8 flex flex-col gap-12 text-xs text-gray uppercase tracking-widest mt-12">
+    <footer
+        class="w-full max-w-7xl mx-auto px-4 pb-8 flex flex-col gap-12 text-xs text-gray uppercase tracking-widest mt-12">
         <!-- Socials Section -->
         <div class="flex flex-col md:flex-row justify-between items-start border-t pt-8" style="border-color: #262626;">
             <div class="mb-8 md:mb-0">
@@ -832,7 +833,8 @@
         </div>
 
         <!-- Copyright -->
-        <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t" style="border-color: #262626;">
+        <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t"
+            style="border-color: #262626;">
             <div>
                 &copy; 2026 Krea Labs // All Rights Reserved.
             </div>
@@ -842,15 +844,15 @@
         </div>
     </footer>
 
-    <script src="data.js"></script>
+    <script src="data.js?v=2"></script>
     <script>
         // Data Rendering Logic
         function renderContent() {
             const projectsContainer = document.getElementById('projects-grid');
             const teamContainer = document.getElementById('team-grid');
 
-            if (typeof projects !== 'undefined' && projectsContainer) {
-                projectsContainer.innerHTML = projects.map(project => `
+            if (typeof window.projects !== 'undefined' && projectsContainer) {
+                projectsContainer.innerHTML = window.projects.map(project => `
                     <article class="p-8 border-b md:border-b-0 md:border-r border-krea-border hover-bg-dark transition-all group reveal">
                         <span class="text-xs ${project.statusColor || 'text-gray'} block mb-4 tracking-widest">${project.status}</span>
                         <h3 class="text-xl font-bold uppercase mb-2 text-white">${project.title}</h3>
@@ -860,8 +862,8 @@
                 `).join('');
             }
 
-            if (typeof team !== 'undefined' && teamContainer) {
-                teamContainer.innerHTML = team.map(member => `
+            if (typeof window.team !== 'undefined' && teamContainer) {
+                teamContainer.innerHTML = window.team.map(member => `
                     <div class="p-8 border-b md:border-b-0 md:border-r border-krea-border hover-bg-dark transition-all reveal">
                         <h4 class="text-sm font-bold uppercase text-white">${member.name}</h4>
                         <span class="text-xs ${member.roleColor || 'text-gray'} block mb-2 tracking-widest">${member.role}</span>
@@ -871,8 +873,8 @@
             }
 
             const socialsContainer = document.getElementById('socials-grid');
-            if (typeof socials !== 'undefined' && socialsContainer) {
-                socialsContainer.innerHTML = socials.map(social => `
+            if (typeof window.socials !== 'undefined' && socialsContainer) {
+                socialsContainer.innerHTML = window.socials.map(social => `
                     <div>
                         <span class="block text-gray mb-2">${social.label} &rarr;</span>
                         <a href="${social.url}" target="_blank" class="text-white hover-text-light-gray border-b border-transparent hover:border-white transition-all pb-1">

@@ -1,6 +1,8 @@
 // Krea Labs Content Data
 
-const projects = [
+// Krea Labs Content Data
+
+window.projects = [
     {
         status: "[ IN PROGRESS ]",
         statusColor: "text-gray", // Optional override
@@ -27,7 +29,7 @@ const projects = [
     }
 ];
 
-const team = [
+window.team = [
     {
         name: "Dr Kelvin Choo",
         role: "AI Technical Specialist",
@@ -60,7 +62,7 @@ const team = [
     }
 ];
 
-const socials = [
+window.socials = [
     {
         label: "Instagram",
         handle: "@krealabs.studio",
