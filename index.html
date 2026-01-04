@@ -423,6 +423,63 @@
             height: 10px;
         }
 
+        /* HUD Decorations */
+        .hud-corner {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-color: var(--krea-white);
+            border-style: solid;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .hud-corner-tl {
+            top: 0;
+            left: 0;
+            border-width: 1px 0 0 1px;
+        }
+
+        .hud-corner-tr {
+            top: 0;
+            right: 0;
+            border-width: 1px 1px 0 0;
+        }
+
+        .hud-corner-bl {
+            bottom: 0;
+            left: 0;
+            border-width: 0 0 1px 1px;
+        }
+
+        .hud-corner-br {
+            bottom: 0;
+            right: 0;
+            border-width: 0 1px 1px 0;
+        }
+
+        .tech-coords {
+            font-size: 0.6rem;
+            color: var(--krea-gray);
+            font-family: var(--font-mono);
+            letter-spacing: 0.05em;
+            position: absolute;
+            opacity: 0.5;
+        }
+
+        /* Status Dot */
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #22C55E;
+            /* System Green */
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+            box-shadow: 0 0 4px #22C55E;
+        }
+
         /* Animations */
         @keyframes blink {
 
@@ -636,20 +693,29 @@
 
     <!-- Navigation / Top Bar -->
     <header class="w-full border-b flex justify-between items-center px-4 py-3 sticky top-0 z-40">
-        <div class="text-xs uppercase tracking-widest text-gray">
-            System: Online
+        <div class="text-xs uppercase tracking-widest text-gray flex items-center">
+            <span class="status-dot"></span> System: Online
         </div>
         <div class="text-xs uppercase tracking-widest text-gray">
             <span id="clock">00:00:00</span> MEL
         </div>
     </header>
 
-    <main class="flex-grow w-full max-w-7xl mx-auto border-x mb-12">
+    <main class="flex-grow w-full max-w-7xl mx-auto border-x mb-12 relative">
+        <span class="tech-coords" style="top: -15px; left: 0;">x: 0.00</span>
+        <span class="tech-coords" style="top: -15px; right: 0;">x: 100.00</span>
 
         <!-- Hero Section -->
         <section
             class="hero-section flex flex-col justify-center items-center p-8 relative border-b crosshair crosshair-tl crosshair-br">
-            <div class="absolute top-0 left-0 p-4 text-xs text-light-gray uppercase tracking-widest">Fig 1.0 // Identity
+            <div class="hud-corner hud-corner-tl"></div>
+            <div class="hud-corner hud-corner-tr"></div>
+            <div class="hud-corner hud-corner-bl"></div>
+            <div class="hud-corner hud-corner-br"></div>
+
+            <div class="absolute top-0 left-0 p-4 text-xs text-light-gray uppercase tracking-widest">
+                Fig 1.0 // Identity Matrix
+                <div class="text-[0.6rem] text-gray mt-1">NODE: ROOT</div>
             </div>
 
             <h1 class="text-4xl md:text-8xl font-bold tracking-tighter mb-4 uppercase hero-title">
@@ -700,9 +766,14 @@
         </section>
 
         <!-- Services Grid (The Pillars) -->
-        <section class="border-b">
-            <div class="p-4 border-b" style="background-color: rgba(23, 23, 23, 0.3);">
-                <h3 class="text-xs uppercase tracking-widest text-light-gray">Fig 2.0 // Capabilities</h3>
+        <section class="border-b relative">
+            <div class="hud-corner hud-corner-tl"></div>
+            <div class="hud-corner hud-corner-tr"></div>
+            <div class="p-4 border-b flex justify-between items-center"
+                style="background-color: rgba(23, 23, 23, 0.3);">
+                <h3 class="text-xs uppercase tracking-widest text-light-gray">Fig 2.0 // Service Protocols</h3>
+                <span class="text-xs text-gray uppercase tracking-widest hidden md:block">Section 02 :
+                    Capabilities</span>
             </div>
 
             <div class="blueprint-grid">
@@ -776,6 +847,7 @@
 
         <!-- Projects Section (Operations) -->
         <section class="border-b relative crosshair crosshair-tl crosshair-br" id="projects">
+            <span class="tech-coords" style="top: 50%; right: -15px; transform: rotate(90deg);">Y-AXIS</span>
             <div class="p-4 border-b" style="background-color: rgba(23, 23, 23, 0.3);">
                 <h3 class="text-xs uppercase tracking-widest text-light-gray">Fig 3.0 // Active Operations</h3>
             </div>
@@ -798,6 +870,9 @@
 
         <!-- Personnel Section (The Architects) -->
         <section class="border-b relative crosshair crosshair-tl crosshair-br" id="team">
+            <div class="hud-corner hud-corner-tl"></div>
+            <div class="hud-corner hud-corner-tr"></div>
+
             <div class="grid grid-cols-1 md:grid-cols-12">
                 <div
                     class="md:col-span-3 border-b md:border-b-0 md:border-r p-6 flex items-center justify-center md:justify-start">
@@ -807,6 +882,9 @@
                 </div>
 
                 <div class="md:col-span-9">
+                    <div class="p-4 border-b" style="background-color: rgba(23, 23, 23, 0.3);">
+                        <h3 class="text-xs uppercase tracking-widest text-light-gray">Fig 5.0 // Architect Roster</h3>
+                    </div>
                     <div id="team-grid" class="grid grid-cols-1 md:grid-cols-3">
                         <!-- Content rendered from data.js -->
                     </div>
