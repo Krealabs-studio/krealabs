@@ -18,29 +18,25 @@ window.projects = [
         description: "Personal website for Kelvin Choo.",
         link: "https://kelza23.github.io/",
         linkText: "View Website ->"
-    },
+    }
+];
+
+window.partners = [
     {
-        status: "[ Deployed ]",
-        statusColor: "text-red", // Optional override
-        title: "Kreatif Minds Website",
-        description: "Sports photography and creative work website.",
+        name: "Kreatif Minds",
+        role: "Creative Strategy & Content",
+        description: "Fueling the digital engine with high-octane visual storytelling and marketing strategy.",
         link: "https://kreatifminds.studio",
-        linkText: "View Website ->"
+        linkText: "View Partner ->"
     }
 ];
 
 window.team = [
     {
-        name: "Dr Kelvin Choo",
+        name: "Kelvin Choo",
         role: "AI Technical Specialist",
         roleColor: "text-red", // Highlight key roles
         description: "Specialises in optimisation, machine learning, deep learning, and AI."
-    },
-    {
-        name: "Dr Nicole Deng",
-        role: "Computer Vision Specialist",
-        roleColor: "text-red",
-        description: "Expert in image processing and computer vision."
     },
     {
         name: "Yuelin Liu",
@@ -67,15 +63,5 @@ window.socials = [
         label: "Instagram",
         handle: "@krealabs.studio",
         url: "https://instagram.com/krealabs.studio"
-    },
-    {
-        label: "Creative Work",
-        handle: "@kreatifminds.co",
-        url: "https://instagram.com/kreatifminds.co"
-    },
-    {
-        label: "Photography",
-        handle: "@kreatifminds.studio",
-        url: "https://instagram.com/kreatifminds.studio"
     }
 ];
