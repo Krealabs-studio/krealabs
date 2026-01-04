@@ -27,7 +27,11 @@ window.partners = [
         role: "Creative Strategy & Content",
         description: "Fueling the digital engine with high-octane visual storytelling and marketing strategy.",
         link: "https://kreatifminds.studio",
-        linkText: "View Partner ->"
+        linkText: "View Partner ->",
+        socials: [
+            { handle: "@kreatifminds.studio", url: "https://instagram.com/kreatifminds.studio" },
+            { handle: "@kreatifminds.co", url: "https://instagram.com/kreatifminds.co" }
+        ]
     }
 ];
 
