@@ -883,12 +883,25 @@
 
                 <div class="md:col-span-9">
                     <div class="p-4 border-b" style="background-color: rgba(23, 23, 23, 0.3);">
-                        <h3 class="text-xs uppercase tracking-widest text-light-gray">Fig 5.0 // Architect Roster</h3>
+                        <h3 class="text-xs uppercase tracking-widest text-light-gray">Fig 4.0 // Architect Roster</h3>
                     </div>
                     <div id="team-grid" class="grid grid-cols-1 md:grid-cols-3">
                         <!-- Content rendered from data.js -->
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Partners Section (Strategic Alliances) -->
+        <section class="border-b relative crosshair crosshair-tl crosshair-br" id="partners">
+            <div class="hud-corner hud-corner-tl"></div>
+            <div class="hud-corner hud-corner-tr"></div>
+            <div class="p-4 border-b" style="background-color: rgba(23, 23, 23, 0.3);">
+                <h3 class="text-xs uppercase tracking-widest text-light-gray">Fig 5.0 // Strategic Alliances</h3>
+            </div>
+
+            <div id="partners-grid" class="w-full">
+                <!-- Content rendered from data.js -->
             </div>
         </section>
 
@@ -964,27 +977,40 @@
             const partnersContainer = document.getElementById('partners-grid');
             if (typeof window.partners !== 'undefined' && partnersContainer) {
                 partnersContainer.innerHTML = window.partners.map((partner, index) => `
-                    <article class="service-card group relative reveal">
+                    <article class="service-card group relative reveal md:flex-row md:items-center md:gap-8 md:p-8">
                         <div class="absolute top-0 right-0 p-4 text-gray group-hover:text-white transition-colors">0${index + 1}</div>
-                        <div>
-                            <div class="icon-box">
+                        
+                        <div class="flex-shrink-0 mb-6 md:mb-0">
+                            <div class="icon-box md:mb-0">
                                 <div class="flex items-center justify-center gap-1">
                                     <div class="h-3 w-3 border border-white"></div>
                                     <div class="h-3 w-3 border border-white -ml-1.5 bg-black"></div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="flex-grow">
                             <h3 class="text-xl uppercase font-bold mb-2 group-hover:translate-x-2 transition-transform">${partner.name}</h3>
                             <div class="text-xs text-red mb-4 tracking-widest uppercase">${partner.role}</div>
-                            <div style="height: 1px; width: 32px; background-color: #404040; transition: all 0.5s;" 
-                                class="group-hover:w-16 group-hover:bg-white mb-4"></div>
-                        </div>
-                        <div class="flex flex-col gap-4">
-                            <p class="text-sm text-gray group-hover:text-light-gray transition-colors">
+                            <p class="text-sm text-gray group-hover:text-light-gray transition-colors max-w-2xl mb-6">
                                 ${partner.description}
                             </p>
-                            <a href="${partner.link}" target="_blank" class="text-xs uppercase tracking-widest text-light-gray group-hover:text-white border-b border-transparent group-hover:border-white pb-1 transition-all w-max">
-                                ${partner.linkText}
-                            </a>
+                            
+                            <div class="flex flex-col md:flex-row gap-6 md:items-center">
+                                <a href="${partner.link}" target="_blank" class="text-xs uppercase tracking-widest text-light-gray group-hover:text-white border-b border-transparent group-hover:border-white pb-1 transition-all w-max">
+                                    ${partner.linkText}
+                                </a>
+                                
+                                ${partner.socials ? `
+                                    <div class="flex gap-4 md:border-l md:pl-6 border-gray-800">
+                                        ${partner.socials.map(social => `
+                                            <a href="${social.url}" target="_blank" class="text-xs text-gray hover:text-white transition-colors">
+                                                ${social.handle}
+                                            </a>
+                                        `).join('')}
+                                    </div>
+                                ` : ''}
+                            </div>
                         </div>
                     </article>
                 `).join('');
