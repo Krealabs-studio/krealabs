@@ -165,13 +165,25 @@
         .justify-center {
             justify-content: center;
         }
+        
+        .justify-start {
+            justify-content: flex-start;
+        }
 
         .items-center {
             align-items: center;
         }
+        
+        .items-start {
+            align-items: flex-start;
+        }
 
         .flex-grow {
             flex-grow: 1;
+        }
+        
+        .flex-shrink-0 {
+            flex-shrink: 0;
         }
 
         .gap-2 {
@@ -181,9 +193,17 @@
         .gap-4 {
             gap: 1rem;
         }
+        
+        .gap-6 {
+            gap: 1.5rem;
+        }
 
         .gap-8 {
             gap: 2rem;
+        }
+        
+        .gap-12 {
+            gap: 3rem;
         }
 
         .grid {
@@ -259,9 +279,17 @@
         .mb-4 {
             margin-bottom: 1rem;
         }
+        
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
 
         .mb-6 {
             margin-bottom: 1.5rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
         }
 
         .mb-12 {
@@ -271,9 +299,25 @@
         .mt-12 {
             margin-top: 3rem;
         }
+        
+        .mt-4 {
+            margin-top: 1rem;
+        }
+        
+        .mt-8 {
+            margin-top: 2rem;
+        }
 
         .pl-4 {
             padding-left: 1rem;
+        }
+        
+        .pt-8 {
+            padding-top: 2rem;
+        }
+        
+        .pb-8 {
+            padding-bottom: 2rem;
         }
 
         .relative {
@@ -290,6 +334,10 @@
 
         .top-0 {
             top: 0;
+        }
+
+        .z-10 {
+            z-index: 10;
         }
 
         .z-40 {
@@ -517,6 +565,10 @@
             .md\:grid-cols-12 {
                 grid-template-columns: repeat(12, minmax(0, 1fr));
             }
+            
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
 
             .md\:col-span-3 {
                 grid-column: span 3 / span 3;
@@ -538,6 +590,10 @@
                 font-size: 2.25rem;
             }
 
+            .md\:text-3xl {
+                font-size: 1.875rem;
+            }
+
             .md\:text-lg {
                 font-size: 1.125rem;
             }
@@ -549,13 +605,81 @@
             .md\:border-r {
                 border-right-width: 1px;
             }
+            
+            .md\:border-l {
+                border-left-width: 1px;
+            }
+            
+            .md\:border-t-0 {
+                border-top-width: 0;
+            }
 
             .md\:p-16 {
                 padding: 4rem;
             }
+            
+            .md\:p-12 {
+                padding: 3rem;
+            }
+            
+            .md\:gap-12 {
+                gap: 3rem;
+            }
+            
+            .md\:gap-16 {
+                gap: 4rem;
+            }
 
             .md\:min-h-\[400px\] {
                 min-height: 400px;
+            }
+            
+            .md\:w-36 {
+                width: 9rem;
+            }
+            
+            .md\:h-36 {
+                height: 9rem;
+            }
+            
+            .md\:w-auto {
+                width: auto;
+            }
+            
+            .md\:mt-0 {
+                margin-top: 0;
+            }
+            
+            .md\:mb-0 {
+                margin-bottom: 0;
+            }
+            
+            .md\:pt-0 {
+                padding-top: 0;
+            }
+            
+            .md\:pl-8 {
+                padding-left: 2rem;
+            }
+            
+            .md\:pl-6 {
+                padding-left: 1.5rem;
+            }
+
+            .md\:justify-start {
+                justify-content: flex-start;
+            }
+            
+            .md\:text-left {
+                text-align: left;
+            }
+            
+            .md\:hidden {
+                display: none;
+            }
+            
+            .hidden.md\:block {
+                display: block;
             }
 
             .blueprint-grid {
@@ -701,7 +825,8 @@
         </div>
     </header>
 
-    <main class="flex-grow w-full max-w-7xl mx-auto border-x mb-12 relative">
+    <!-- Removed mb-12 to fix gap issue -->
+    <main class="flex-grow w-full max-w-7xl mx-auto border-x relative">
         <span class="tech-coords" style="top: -15px; left: 0;">x: 0.00</span>
         <span class="tech-coords" style="top: -15px; right: 0;">x: 100.00</span>
 
@@ -888,43 +1013,55 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8"
-            style="background-color: rgba(23, 23, 23, 0.1);">
-            <div>
-                <h4 class="text-lg uppercase font-bold mb-2">Ready to initiate?</h4>
-                <p class="text-gray text-sm max-w-md">Our engineers are standing by to architect your next breakthrough.
-                </p>
-            </div>
-            <a href="mailto:kelvinchoo96@gmail.com"
-                class="px-6 py-3 border text-light-gray hover-white hover-bg-dark transition-all uppercase text-xs tracking-widest hover-border-white mb-8 md:mb-0 inline-block">
-                Contact Protocol ->
-            </a>
-            </div>
+        <!-- CTA Section (Fixed Structure & Design) -->
+        <section class="p-8 md:p-16 relative" style="background-color: rgba(23, 23, 23, 0.1);">
+            <div class="hud-corner hud-corner-bl"></div>
+            <div class="hud-corner hud-corner-br"></div>
+            
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-16 relative z-10">
+                
+                <!-- Intro & Action -->
+                <div class="flex flex-col gap-8 items-start max-w-xl">
+                    <div>
+                        <h4 class="text-lg uppercase font-bold mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-white"></span>
+                            Ready to initiate?
+                        </h4>
+                        <p class="text-gray text-sm">
+                            Our engineers are standing by to architect your next breakthrough.
+                            <br>System resources are available.
+                        </p>
+                    </div>
+                    
+                    <a href="mailto:kelvinchoo96@gmail.com"
+                        class="px-8 py-4 border text-light-gray hover-white hover-bg-dark transition-all uppercase text-xs tracking-widest hover-border-white inline-flex items-center gap-4 group">
+                        <span class="w-1 h-1 bg-white group-hover:bg-red-500 transition-colors"></span>
+                        Contact Protocol ->
+                    </a>
+                </div>
+    
+                <!-- Merged Socials / Connect Section -->
+                <div class="flex flex-col gap-4 border-t md:border-t-0 md:border-l border-krea-border pt-8 md:pt-0 md:pl-12 w-full md:w-auto">
+                    <div>
+                        <span class="block text-white mb-2 uppercase text-xs tracking-widest">// Connect</span>
+                        <p class="text-light-gray text-xs mb-4">Visual experiments stream.</p>
+                    </div>
+                    <div id="socials-grid" class="flex flex-col gap-3">
+                        <!-- Content rendered from data.js -->
+                    </div>
+                </div>
 
-            <!-- Merged Socials / Connect Section -->
-            <div
-                class="flex flex-col md:flex-row gap-8 md:gap-16 border-t md:border-t-0 md:border-l border-krea-border pt-8 md:pt-0 md:pl-8 w-full md:w-auto mt-8 md:mt-0">
-                <div>
-                    <span class="block text-white mb-4 uppercase text-xs tracking-widest">// Connect</span>
-                    <p class="max-w-xs text-light-gray text-xs mb-4">Follow our latest visual experiments.</p>
-                </div>
-                <div id="socials-grid" class="flex flex-col gap-4">
-                    <!-- Content rendered from data.js -->
-                </div>
             </div>
         </section>
 
     </main>
 
+    <!-- Footer (Removed mt-12, added top border) -->
     <footer
-        class="w-full max-w-7xl mx-auto px-4 pb-8 flex flex-col gap-12 text-xs text-gray uppercase tracking-widest mt-12">
-        <!-- Socials Section -->
-
-
+        class="w-full max-w-7xl mx-auto px-4 pb-8 flex flex-col gap-12 text-xs text-gray uppercase tracking-widest mt-0 pt-12 border-t border-krea-border">
+        
         <!-- Copyright -->
-        <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t"
-            style="border-color: #262626;">
+        <div class="flex flex-col md:flex-row justify-between items-center">
             <div>
                 &copy; 2026 Krea Labs // All Rights Reserved.
             </div>
@@ -981,7 +1118,7 @@
             const partnersContainer = document.getElementById('partners-grid');
             if (typeof window.partners !== 'undefined' && partnersContainer) {
                 partnersContainer.innerHTML = window.partners.map((partner, index) => `
-                    <article class="p-8 md:p-12 border-b border-r border-l border-t-0 md:border-t-0 md:border-l-0 md:border-r-0 border-krea-border hover-bg-dark transition-all group reveal">
+                    <article class="p-8 md:p-12 border-b border-krea-border hover-bg-dark transition-all group reveal">
                         <div class="w-full max-w-5xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12">
                             
                             <!-- Partner Identity Node (Fixed Width to prevent distortion) -->
