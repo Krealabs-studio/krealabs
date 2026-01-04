@@ -785,6 +785,17 @@
             </div>
         </section>
 
+        <!-- Partners Section (Strategic Alliances) -->
+        <section class="border-b relative crosshair crosshair-tl crosshair-br" id="partners">
+            <div class="p-4 border-b" style="background-color: rgba(23, 23, 23, 0.3);">
+                <h3 class="text-xs uppercase tracking-widest text-light-gray">Fig 4.0 // Strategic Alliances</h3>
+            </div>
+
+            <div id="partners-grid" class="blueprint-grid">
+                <!-- Content rendered from data.js -->
+            </div>
+        </section>
+
         <!-- Personnel Section (The Architects) -->
         <section class="border-b relative crosshair crosshair-tl crosshair-br" id="team">
             <div class="grid grid-cols-1 md:grid-cols-12">
@@ -869,6 +880,35 @@
                         <span class="text-xs ${member.roleColor || 'text-gray'} block mb-2 tracking-widest">${member.role}</span>
                         <p class="text-xs text-gray mt-4">${member.description}</p>
                     </div>
+                `).join('');
+            }
+
+            const partnersContainer = document.getElementById('partners-grid');
+            if (typeof window.partners !== 'undefined' && partnersContainer) {
+                partnersContainer.innerHTML = window.partners.map((partner, index) => `
+                    <article class="service-card group relative reveal">
+                        <div class="absolute top-0 right-0 p-4 text-gray group-hover:text-white transition-colors">0${index + 1}</div>
+                        <div>
+                            <div class="icon-box">
+                                <div class="flex items-center justify-center gap-1">
+                                    <div class="h-3 w-3 border border-white"></div>
+                                    <div class="h-3 w-3 border border-white -ml-1.5 bg-black"></div>
+                                </div>
+                            </div>
+                            <h3 class="text-xl uppercase font-bold mb-2 group-hover:translate-x-2 transition-transform">${partner.name}</h3>
+                            <div class="text-xs text-red mb-4 tracking-widest uppercase">${partner.role}</div>
+                            <div style="height: 1px; width: 32px; background-color: #404040; transition: all 0.5s;" 
+                                class="group-hover:w-16 group-hover:bg-white mb-4"></div>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <p class="text-sm text-gray group-hover:text-light-gray transition-colors">
+                                ${partner.description}
+                            </p>
+                            <a href="${partner.link}" target="_blank" class="text-xs uppercase tracking-widest text-light-gray group-hover:text-white border-b border-transparent group-hover:border-white pb-1 transition-all w-max">
+                                ${partner.linkText}
+                            </a>
+                        </div>
+                    </article>
                 `).join('');
             }
 
