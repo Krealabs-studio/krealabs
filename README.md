@@ -1,4 +1,4 @@
-# Krea Labs | Digital Blueprint
+# Krea Labs | Architecting the Future
 
 ![Krea Labs Banner](https://github.com/Krealabs-studio/krealabs/blob/main/Krealabs-black.svg) 
 
