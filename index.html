@@ -864,22 +864,14 @@
             <div class="hud-corner hud-corner-tl"></div>
             <div class="hud-corner hud-corner-tr"></div>
 
-            <div class="grid grid-cols-1 md:grid-cols-12">
-                <div
-                    class="md:col-span-3 border-b md:border-b-0 md:border-r p-6 flex items-center justify-center md:justify-start">
-                    <span class="text-xs text-gray uppercase rotate-text tracking-widest">
-                        Section 03 : Personnel
-                    </span>
-                </div>
+            <div class="p-4 border-b flex justify-between items-center"
+                style="background-color: rgba(23, 23, 23, 0.3);">
+                <h3 class="text-xs uppercase tracking-widest text-light-gray">Fig 4.0 // Architect Roster</h3>
+                <span class="text-xs text-gray uppercase tracking-widest hidden md:block">Section 03 : Personnel</span>
+            </div>
 
-                <div class="md:col-span-9">
-                    <div class="p-4 border-b" style="background-color: rgba(23, 23, 23, 0.3);">
-                        <h3 class="text-xs uppercase tracking-widest text-light-gray">Fig 4.0 // Architect Roster</h3>
-                    </div>
-                    <div id="team-grid" class="grid grid-cols-1 md:grid-cols-3">
-                        <!-- Content rendered from data.js -->
-                    </div>
-                </div>
+            <div id="team-grid" class="blueprint-grid">
+                <!-- Content rendered from data.js -->
             </div>
         </section>
 
@@ -957,51 +949,86 @@
 
             if (typeof window.team !== 'undefined' && teamContainer) {
                 teamContainer.innerHTML = window.team.map(member => `
-                    <div class="p-8 border-b md:border-b-0 md:border-r border-krea-border hover-bg-dark transition-all reveal">
-                        <h4 class="text-sm font-bold uppercase text-white">${member.name}</h4>
-                        <span class="text-xs ${member.roleColor || 'text-gray'} block mb-2 tracking-widest">${member.role}</span>
-                        <p class="text-xs text-gray mt-4">${member.description}</p>
-                    </div>
+                    <article class="service-card group relative reveal p-8 flex flex-col justify-between" style="min-height: 480px;">
+                        <div class="absolute top-0 right-0 p-4 text-gray group-hover:text-white transition-colors">ARCHITECT</div>
+                        
+                        <!-- Player Card Visual/Photo Placeholder -->
+                        <div class="w-full aspect-square bg-gray-900 border border-gray-800 mb-6 flex items-center justify-center group-hover:border-white transition-colors relative overflow-hidden">
+                            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wIDBoNDB2NDBIMHoiIGZpbGw9Im5vbmUiLz4KPHBhdGggZD0iTTAgNDBMMTQwIDAiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPg==')] opacity-20"></div>
+                            <div class="text-xs text-gray uppercase tracking-widest text-center">
+                                [ NO IMAGE DATA ]<br>
+                                <span class="text-[0.6rem] opacity-50">Subject: ${member.name}</span>
+                            </div>
+                            
+                            <!-- Corner Accents -->
+                            <div class="absolute top-0 left-0 w-2 h-2 border-l border-t border-gray-600 group-hover:border-white transition-colors"></div>
+                            <div class="absolute bottom-0 right-0 w-2 h-2 border-r border-b border-gray-600 group-hover:border-white transition-colors"></div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-bold uppercase text-white mb-1 group-hover:translate-x-1 transition-transform">${member.name}</h4>
+                            <span class="text-xs ${member.roleColor || 'text-gray'} block mb-4 tracking-widest uppercase border-b border-gray-800 pb-2">${member.role}</span>
+                            <p class="text-xs text-gray leading-relaxed">${member.description}</p>
+                        </div>
+                    </article>
                 `).join('');
             }
 
             const partnersContainer = document.getElementById('partners-grid');
             if (typeof window.partners !== 'undefined' && partnersContainer) {
                 partnersContainer.innerHTML = window.partners.map((partner, index) => `
-                    <article class="service-card group relative reveal md:flex-row md:items-center md:gap-8 md:p-8">
-                        <div class="absolute top-0 right-0 p-4 text-gray group-hover:text-white transition-colors">0${index + 1}</div>
-                        
-                        <div class="flex-shrink-0 mb-6 md:mb-0">
-                            <div class="icon-box md:mb-0">
-                                <div class="flex items-center justify-center gap-1">
-                                    <div class="h-3 w-3 border border-white"></div>
-                                    <div class="h-3 w-3 border border-white -ml-1.5 bg-black"></div>
+                    <article class="p-8 md:p-12 border-b border-r border-l border-t-0 md:border-t-0 md:border-l-0 md:border-r-0 border-krea-border hover-bg-dark transition-all group reveal flex flex-col items-center text-center">
+                        <div class="w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16">
+                            
+                            <!-- Partner Identity Node -->
+                            <div class="flex-shrink-0 relative">
+                                <div class="w-32 h-32 md:w-40 md:h-40 border border-gray-700 flex items-center justify-center group-hover:border-white transition-colors bg-black">
+                                    <div class="flex flex-col gap-1 items-center">
+                                        <div class="flex gap-1">
+                                            <div class="w-2 h-2 bg-white"></div>
+                                            <div class="w-2 h-2 border border-white"></div>
+                                        </div>
+                                        <div class="flex gap-1">
+                                            <div class="w-2 h-2 border border-white"></div>
+                                            <div class="w-2 h-2 bg-gray-500"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 text-[0.6rem] uppercase tracking-widest bg-black px-2 text-gray border border-gray-800">
+                                    Node 0${index + 1}
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="flex-grow">
-                            <h3 class="text-xl uppercase font-bold mb-2 group-hover:translate-x-2 transition-transform">${partner.name}</h3>
-                            <div class="text-xs text-red mb-4 tracking-widest uppercase">${partner.role}</div>
-                            <p class="text-sm text-gray group-hover:text-light-gray transition-colors max-w-2xl mb-6">
-                                ${partner.description}
-                            </p>
-                            
-                            <div class="flex flex-col md:flex-row gap-6 md:items-center">
-                                <a href="${partner.link}" target="_blank" class="text-xs uppercase tracking-widest text-light-gray group-hover:text-white border-b border-transparent group-hover:border-white pb-1 transition-all w-max">
-                                    ${partner.linkText}
-                                </a>
+                            <!-- Partner Data -->
+                            <div class="flex-grow text-center md:text-left">
+                                <h3 class="text-2xl md:text-3xl uppercase font-bold mb-2 text-white tracking-tight group-hover:translate-x-1 transition-transform inline-block">
+                                    ${partner.name}
+                                </h3>
+                                <div class="text-xs text-red mb-6 tracking-widest uppercase font-bold flex items-center justify-center md:justify-start gap-2">
+                                    <span class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
+                                    ${partner.role}
+                                </div>
+                                <p class="text-sm text-gray group-hover:text-light-gray transition-colors mb-8 max-w-xl leading-relaxed">
+                                    ${partner.description}
+                                </p>
                                 
-                                ${partner.socials ? `
-                                    <div class="flex gap-4 md:border-l md:pl-6 border-gray-800">
-                                        ${partner.socials.map(social => `
-                                            <a href="${social.url}" target="_blank" class="text-xs text-gray hover:text-white transition-colors">
-                                                ${social.handle}
-                                            </a>
-                                        `).join('')}
-                                    </div>
-                                ` : ''}
+                                <div class="flex flex-col md:flex-row gap-6 items-center justify-center md:justify-start border-t border-gray-900 pt-6">
+                                    <a href="${partner.link}" target="_blank" class="text-xs uppercase tracking-widest text-white hover:text-red transition-colors flex items-center gap-2">
+                                        [ Initiate Link ] <span class="text-lg leading-none">&rarr;</span>
+                                    </a>
+                                    
+                                    ${partner.socials ? `
+                                        <div class="flex gap-6 md:border-l md:pl-6 border-gray-800">
+                                            ${partner.socials.map(social => `
+                                                <a href="${social.url}" target="_blank" class="text-xs text-gray hover:text-white transition-colors uppercase tracking-wider">
+                                                    ${social.handle}
+                                                </a>
+                                            `).join('')}
+                                        </div>
+                                    ` : ''}
+                                </div>
                             </div>
+
                         </div>
                     </article>
                 `).join('');
