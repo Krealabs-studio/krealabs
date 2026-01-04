@@ -19,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/Krealabs-studio/krealabs/issues"
   },
-  "homepage": "https://krealabs.studio",
-  "devDependencies": {
-    "gh-pages": "^6.3.0"
-  }
+  "homepage": "https://krealabs.studio"
 }
