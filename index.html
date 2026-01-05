@@ -1073,6 +1073,16 @@
 
     <script src="data.js?v=2"></script>
     <script>
+        function escapeHTML(str) {
+            if (str === null || str === undefined) return '';
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
         // Data Rendering Logic
         function renderContent() {
             const projectsContainer = document.getElementById('projects-grid');
@@ -1081,10 +1091,10 @@
             if (typeof window.projects !== 'undefined' && projectsContainer) {
                 projectsContainer.innerHTML = window.projects.map(project => `
                     <article class="p-8 border-b md:border-b-0 md:border-r border-krea-border hover-bg-dark transition-all group reveal">
-                        <span class="text-xs ${project.statusColor || 'text-gray'} block mb-4 tracking-widest">${project.status}</span>
-                        <h3 class="text-xl font-bold uppercase mb-2 text-white">${project.title}</h3>
-                        <p class="text-sm text-gray mb-6">${project.description}</p>
-                        <a href="${project.link}" class="text-xs uppercase tracking-widest text-light-gray group-hover:text-white border-b border-transparent group-hover:border-white pb-1 transition-all">${project.linkText}</a>
+                        <span class="text-xs ${escapeHTML(project.statusColor) || 'text-gray'} block mb-4 tracking-widest">${escapeHTML(project.status)}</span>
+                        <h3 class="text-xl font-bold uppercase mb-2 text-white">${escapeHTML(project.title)}</h3>
+                        <p class="text-sm text-gray mb-6">${escapeHTML(project.description)}</p>
+                        <a href="${escapeHTML(project.link)}" class="text-xs uppercase tracking-widest text-light-gray group-hover:text-white border-b border-transparent group-hover:border-white pb-1 transition-all">${escapeHTML(project.linkText)}</a>
                     </article>
                 `).join('');
             }
@@ -1107,9 +1117,9 @@
                         </div>
 
                         <div>
-                            <h4 class="text-xl font-bold uppercase text-white mb-1 group-hover:translate-x-1 transition-transform">${member.name}</h4>
-                            <span class="text-xs ${member.roleColor || 'text-gray'} block mb-4 tracking-widest uppercase border-b border-gray-800 pb-2">${member.role}</span>
-                            <p class="text-xs text-gray leading-relaxed">${member.description}</p>
+                            <h4 class="text-xl font-bold uppercase text-white mb-1 group-hover:translate-x-1 transition-transform">${escapeHTML(member.name)}</h4>
+                            <span class="text-xs ${escapeHTML(member.roleColor) || 'text-gray'} block mb-4 tracking-widest uppercase border-b border-gray-800 pb-2">${escapeHTML(member.role)}</span>
+                            <p class="text-xs text-gray leading-relaxed">${escapeHTML(member.description)}</p>
                         </div>
                     </article>
                 `).join('');
@@ -1143,26 +1153,26 @@
                             <!-- Partner Data -->
                             <div class="flex-grow text-center md:text-left pt-2">
                                 <h3 class="text-2xl md:text-3xl uppercase font-bold mb-2 text-white tracking-tight group-hover:translate-x-1 transition-transform inline-block">
-                                    ${partner.name}
+                                    ${escapeHTML(partner.name)}
                                 </h3>
                                 <div class="text-xs text-red mb-6 tracking-widest uppercase font-bold flex items-center justify-center md:justify-start gap-2">
                                     <span class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
-                                    ${partner.role}
+                                    ${escapeHTML(partner.role)}
                                 </div>
                                 <p class="text-sm text-gray group-hover:text-light-gray transition-colors mb-8 max-w-2xl leading-relaxed">
-                                    ${partner.description}
+                                    ${escapeHTML(partner.description)}
                                 </p>
                                 
                                 <div class="flex flex-col md:flex-row gap-6 items-center justify-center md:justify-start border-t border-gray-900 pt-6">
-                                    <a href="${partner.link}" target="_blank" class="text-xs uppercase tracking-widest text-white hover:text-red transition-colors flex items-center gap-2">
+                                    <a href="${escapeHTML(partner.link)}" target="_blank" rel="noopener noreferrer" class="text-xs uppercase tracking-widest text-white hover:text-red transition-colors flex items-center gap-2">
                                         [ Initiate Link ] <span class="text-lg leading-none">&rarr;</span>
                                     </a>
                                     
                                     ${partner.socials ? `
                                         <div class="flex gap-6 md:border-l md:pl-6 border-gray-800">
                                             ${partner.socials.map(social => `
-                                                <a href="${social.url}" target="_blank" class="text-xs text-gray hover:text-white transition-colors uppercase tracking-wider">
-                                                    ${social.handle}
+                                                <a href="${escapeHTML(social.url)}" target="_blank" rel="noopener noreferrer" class="text-xs text-gray hover:text-white transition-colors uppercase tracking-wider">
+                                                    ${escapeHTML(social.handle)}
                                                 </a>
                                             `).join('')}
                                         </div>
@@ -1179,9 +1189,9 @@
             if (typeof window.socials !== 'undefined' && socialsContainer) {
                 socialsContainer.innerHTML = window.socials.map(social => `
                     <div>
-                        <span class="block text-gray mb-2">${social.label} &rarr;</span>
-                        <a href="${social.url}" target="_blank" class="text-white hover-text-light-gray border-b border-transparent hover:border-white transition-all pb-1">
-                            ${social.handle}
+                        <span class="block text-gray mb-2">${escapeHTML(social.label)} &rarr;</span>
+                        <a href="${escapeHTML(social.url)}" target="_blank" rel="noopener noreferrer" class="text-white hover-text-light-gray border-b border-transparent hover:border-white transition-all pb-1">
+                            ${escapeHTML(social.handle)}
                         </a>
                     </div>
                 `).join('');
