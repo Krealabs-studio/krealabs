@@ -39,7 +39,7 @@ export default function Contact() {
           <div className="flex flex-col gap-4 border-t md:border-t-0 md:border-l border-krea-border pt-8 md:pt-0 md:pl-12 w-full md:w-auto">
             <div>
               <span className="block text-krea-white mb-2 uppercase text-[0.65rem] tracking-widest">
-                // Connect
+                {"// Connect"}
               </span>
               <p className="text-krea-gray text-[0.65rem] mb-4">Visual experiments stream.</p>
             </div>
@@ -52,6 +52,7 @@ export default function Contact() {
                   <a
                     href={social.url}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-krea-white hover:text-krea-light-gray border-b border-transparent hover:border-krea-white transition-all pb-1 text-sm"
                   >
                     {social.handle}
