@@ -1,6 +1,6 @@
 # Krea Labs | Architecting the Future
 
-![Krea Labs Banner](public/Krealabs-black.svg)
+![Krea Labs Banner](/public/Krealabs-black.svg)
 
 > **From scratch to scale.**
 > We are a one-stop engineering lab building complex ideas from the ground up.
@@ -12,24 +12,26 @@ We architect the future, one layer at a time.
 
 ## // CAPABILITIES
 
-*   **Hard Tech**: CAD Engineering, Industrial Design, Hardware Integration.
-*   **Soft Tech**: AI, Full-Stack Web, Digital Innovation.
-*   **The Lab**: Rapid Prototyping, Process Optimization, R&D Consulting.
+- **Hard Tech**: CAD Engineering, Industrial Design, Hardware Integration.
+- **Soft Tech**: AI, Full-Stack Web, Digital Innovation.
+- **The Lab**: Rapid Prototyping, Process Optimization, R&D Consulting.
 
 ## // TECHNOLOGY STACK (2026 REFRESH)
 
 Rebuilt with a modern, type-safe stack while maintaining the raw "Digital Blueprint" aesthetic:
-*   **Next.js 15 (App Router)**: Hybrid rendering for performance and SEO.
-*   **Tailwind CSS v4**: Utility-first styling with custom theme tokens.
-*   **TypeScript**: Strict typing for mission-critical reliability.
-*   **Framer Motion**: Smooth, declarative animations and scroll reveals.
-*   **Design System**: Custom blueprint aesthetic with Space Mono typography.
+
+- **Next.js 15 (App Router)**: Hybrid rendering for performance and SEO.
+- **Tailwind CSS v4**: Utility-first styling with custom theme tokens.
+- **TypeScript**: Strict typing for mission-critical reliability.
+- **Framer Motion**: Smooth, declarative animations and scroll reveals.
+- **Design System**: Custom blueprint aesthetic with Space Mono typography.
 
 ## // DEVELOPMENT
 
 ### Prerequisites
-*   Node.js 20+
-*   pnpm
+
+- Node.js 20+
+- pnpm
 
 ### Getting Started
 
@@ -60,6 +62,7 @@ pnpm build
 This project is configured for modern edge deployment (Vercel, Netlify) or static export to GitHub Pages.
 
 ### Access
+
 Live System: [krealabs.studio](https://krealabs.studio)
 
 ---

@@ -39,7 +39,8 @@ export const PROJECTS: Project[] = [
     status: "[ IN PROGRESS ]",
     statusColor: "text-krea-gray",
     title: "Markless Sports Analysis",
-    description: "Computer vision-driven decision support system for sports analysis.",
+    description:
+      "Computer vision-driven decision support system for sports analysis.",
     link: "#",
     linkText: "View Project ->",
   },
@@ -51,18 +52,33 @@ export const PROJECTS: Project[] = [
     link: "https://kelza23.github.io/",
     linkText: "View Website ->",
   },
+  {
+    status: "[ Deployed ]",
+    statusColor: "text-krea-red",
+    title: "Yuelin Liu's Website",
+    description: "Portfolio website for Yuelin Liu.",
+    link: "https://www.liuyuelin.dev/",
+    linkText: "View Website ->",
+  },
 ];
 
 export const PARTNERS: Partner[] = [
   {
     name: "Kreatif Minds",
     role: "Creative Strategy & Content",
-    description: "Fueling the digital engine with high-octane visual storytelling and marketing strategy.",
+    description:
+      "Fueling the digital engine with high-octane visual storytelling and marketing strategy.",
     link: "https://kreatifminds.studio",
     linkText: "View Partner ->",
     socials: [
-      { handle: "@kreatifminds.studio", url: "https://instagram.com/kreatifminds.studio" },
-      { handle: "@kreatifminds.co", url: "https://instagram.com/kreatifminds.co" },
+      {
+        handle: "@kreatifminds.studio",
+        url: "https://instagram.com/kreatifminds.studio",
+      },
+      {
+        handle: "@kreatifminds.co",
+        url: "https://instagram.com/kreatifminds.co",
+      },
     ],
   },
 ];
@@ -72,7 +88,8 @@ export const TEAM: TeamMember[] = [
     name: "Kelvin Choo",
     role: "AI Technical Specialist",
     roleColor: "text-krea-red",
-    description: "Specialises in optimisation, machine learning, deep learning, and AI.",
+    description:
+      "Specialises in optimisation, machine learning, deep learning, and AI.",
   },
   {
     name: "Yuelin Liu",
