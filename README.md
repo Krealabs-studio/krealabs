@@ -1,6 +1,6 @@
 # Krea Labs | Architecting the Future
 
-![Krea Labs Banner](Krealabs-black.svg) 
+![Krea Labs Banner](public/Krealabs-black.svg)
 
 > **From scratch to scale.**
 > We are a one-stop engineering lab building complex ideas from the ground up.
@@ -19,13 +19,17 @@ We architect the future, one layer at a time.
 ## // TECHNOLOGY STACK (2026 REFRESH)
 
 Rebuilt with a modern, type-safe stack while maintaining the raw "Digital Blueprint" aesthetic:
-*   **Next.js 15 (App Router)**: Hybrid rendering for performance.
+*   **Next.js 15 (App Router)**: Hybrid rendering for performance and SEO.
 *   **Tailwind CSS v4**: Utility-first styling with custom theme tokens.
 *   **TypeScript**: Strict typing for mission-critical reliability.
 *   **Framer Motion**: Smooth, declarative animations and scroll reveals.
 *   **Design System**: Custom blueprint aesthetic with Space Mono typography.
 
 ## // DEVELOPMENT
+
+### Prerequisites
+*   Node.js 20+
+*   pnpm
 
 ### Getting Started
 
@@ -41,6 +45,8 @@ Then, run the development server:
 pnpm dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 ### Building
 
 To create an optimized production build:
@@ -51,7 +57,7 @@ pnpm build
 
 ## // DEPLOYMENT
 
-This project is configured for modern edge deployment.
+This project is configured for modern edge deployment (Vercel, Netlify) or static export to GitHub Pages.
 
 ### Access
 Live System: [krealabs.studio](https://krealabs.studio)
