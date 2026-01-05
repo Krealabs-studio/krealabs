@@ -67,12 +67,6 @@
             cursor: pointer;
         }
 
-        /* Accessibility: Focus Indicators */
-        :focus-visible {
-            outline: 2px solid var(--krea-white);
-            outline-offset: 4px;
-        }
-
         /* Typography */
         .text-xs {
             font-size: 0.75rem;
@@ -860,7 +854,7 @@
             <button onclick="scrollToLab()" class="btn-enter text-sm uppercase px-8 py-4 tracking-widest">
                 <span class="btn-corner-tl"></span>
                 <span class="btn-corner-br"></span>
-                Enter the Lab <span class="cursor-blink" aria-hidden="true">_</span>
+                Enter the Lab <span class="cursor-blink">_</span>
             </button>
 
             <!-- Grid Background -->
@@ -1318,9 +1312,6 @@
         function scrollToLab() {
             const aboutSection = document.getElementById('about');
             aboutSection.scrollIntoView({ behavior: 'smooth' });
-            // Improve keyboard navigation by moving focus
-            aboutSection.setAttribute('tabindex', '-1');
-            aboutSection.focus({ preventScroll: true });
         }
 
         // Add coordinate tracking effect on service cards
