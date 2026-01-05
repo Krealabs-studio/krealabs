@@ -63,6 +63,8 @@ export default function Partners() {
                   <a
                     href={partner.link}
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${partner.name} website (opens in new tab)`}
                     className="text-[0.65rem] uppercase tracking-widest text-krea-white hover:text-krea-red transition-colors flex items-center gap-2"
                   >
                     [ Initiate Link ] <ArrowRight className="w-4 h-4" />
@@ -75,6 +77,8 @@ export default function Partners() {
                           key={social.handle}
                           href={social.url}
                           target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Visit ${partner.name} on ${social.handle} (opens in new tab)`}
                           className="text-[0.65rem] text-krea-gray hover:text-krea-white transition-colors uppercase tracking-wider"
                         >
                           {social.handle}
