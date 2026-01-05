@@ -14,7 +14,7 @@ export default function Home() {
       <CustomCursor />
       <Header />
       
-      <main className="flex-grow w-full max-w-7xl mx-auto border-x border-krea-border relative bg-krea-black">
+      <main className="flex-grow w-full max-w-7xl mx-auto border-x border-krea-border relative z-10">
         {/* Decorative Grid Lines / Coords */}
         <div className="absolute top-[-15px] left-0 text-[0.6rem] text-krea-gray opacity-50 font-mono">x: 0.00</div>
         <div className="absolute top-[-15px] right-0 text-[0.6rem] text-krea-gray opacity-50 font-mono">x: 100.00</div>
