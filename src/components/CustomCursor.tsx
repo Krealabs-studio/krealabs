@@ -36,7 +36,7 @@ export default function CustomCursor() {
     <>
       <div
         id="grid-highlight"
-        className="fixed inset-0 pointer-events-none z-[-1]"
+        className="fixed inset-0 pointer-events-none z-0"
         style={{
           background: `radial-gradient(circle 400px at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.05), transparent)`,
         }}
