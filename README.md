@@ -1,6 +1,6 @@
 # Krea Labs | Architecting the Future
 
-![Krea Labs Banner](https://github.com/Krealabs-studio/krealabs/blob/main/Krealabs-black.svg) 
+![Krea Labs Banner](Krealabs-black.svg) 
 
 > **From scratch to scale.**
 > We are a one-stop engineering lab building complex ideas from the ground up.
@@ -16,20 +16,42 @@ We architect the future, one layer at a time.
 *   **Soft Tech**: AI, Full-Stack Web, Digital Innovation.
 *   **The Lab**: Rapid Prototyping, Process Optimization, R&D Consulting.
 
-## // TECHNOLOGY STACK
+## // TECHNOLOGY STACK (2026 REFRESH)
 
-Built with a commitment to performance and raw aesthetics:
-*   **Vanilla HTML5/CSS3**: No frameworks, no Tailwind. Pure, optimized code.
-*   **Vanilla JavaScript**: Lightweight interactions and dynamic content rendering.
-*   **Design System**: Custom "Digital Blueprint" aesthetic with monospaced typography and high-contrast visuals.
+Rebuilt with a modern, type-safe stack while maintaining the raw "Digital Blueprint" aesthetic:
+*   **Next.js 15 (App Router)**: Hybrid rendering for performance.
+*   **Tailwind CSS v4**: Utility-first styling with custom theme tokens.
+*   **TypeScript**: Strict typing for mission-critical reliability.
+*   **Framer Motion**: Smooth, declarative animations and scroll reveals.
+*   **Design System**: Custom blueprint aesthetic with Space Mono typography.
+
+## // DEVELOPMENT
+
+### Getting Started
+
+First, install the dependencies:
+
+```bash
+pnpm install
+```
+
+Then, run the development server:
+
+```bash
+pnpm dev
+```
+
+### Building
+
+To create an optimized production build:
+
+```bash
+pnpm build
+```
 
 ## // DEPLOYMENT
 
-This project is deployed via GitHub Pages.
-
-### Scripts
-
-*   `npm run deploy`: Deploys the current directory to the `gh-pages` branch.
+This project is configured for modern edge deployment.
 
 ### Access
 Live System: [krealabs.studio](https://krealabs.studio)
