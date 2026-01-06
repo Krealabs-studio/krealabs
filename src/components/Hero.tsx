@@ -22,7 +22,11 @@ export default function Hero() {
   }, []);
 
   const scrollToLab = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+      aboutSection.focus({ preventScroll: true });
+    }
   };
 
   return (
