@@ -1,0 +1,13 @@
+
+> krealabs@0.1.0 dev /app
+> next dev
+
+▲ Next.js 16.1.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+
+✓ Starting...
+✓ Ready in 1071ms
+○ Compiling / ...
+ GET / 200 in 9.6s (compile: 8.9s, render: 681ms)
+ GET / 200 in 130ms (compile: 8ms, render: 122ms)
