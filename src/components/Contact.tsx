@@ -39,7 +39,7 @@ export default function Contact() {
           <div className="flex flex-col gap-4 border-t md:border-t-0 md:border-l border-krea-border pt-8 md:pt-0 md:pl-12 w-full md:w-auto">
             <div>
               <span className="block text-krea-white mb-2 uppercase text-[0.65rem] tracking-widest">
-                // Connect
+                {'//'} Connect
               </span>
               <p className="text-krea-gray text-[0.65rem] mb-4">Visual experiments stream.</p>
             </div>
@@ -65,7 +65,7 @@ export default function Contact() {
 
       <footer className="w-full max-w-7xl mx-auto px-4 pb-8 flex flex-col gap-12 text-[0.65rem] text-krea-gray uppercase tracking-widest mt-0 pt-12 border-t border-krea-border">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div>&copy; 2026 Krea Labs // All Rights Reserved.</div>
+          <div>&copy; 2026 Krea Labs {'//'} All Rights Reserved.</div>
           <div className="opacity-50">System Status: Nominal</div>
         </div>
       </footer>
