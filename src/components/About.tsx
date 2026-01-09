@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="about" className="grid grid-cols-1 md:grid-cols-12 border-b border-krea-border">
+    <section
+      id="about"
+      tabIndex={-1}
+      className="grid grid-cols-1 md:grid-cols-12 border-b border-krea-border outline-none"
+    >
       <div className="md:col-span-3 border-b md:border-b-0 md:border-r border-krea-border p-6 flex items-center justify-center">
         <span className="text-xs text-krea-gray uppercase md:-rotate-90 whitespace-nowrap tracking-widest">
           Section 01 : Manifesto
@@ -25,11 +29,11 @@ export default function About() {
         </h2>
         <div className="flex flex-col md:flex-row gap-8 mt-12 text-xs text-krea-light-gray">
           <div className="flex-grow border-l border-krea-border/30 pl-4">
-            <strong className="text-krea-white block mb-2 uppercase tracking-widest">// MISSION</strong>
+            <strong className="text-krea-white block mb-2 uppercase tracking-widest">{'//'} MISSION</strong>
             To bridge the gap between abstract innovation and tangible industrial application.
           </div>
           <div className="flex-grow border-l border-krea-border/30 pl-4">
-            <strong className="text-krea-white block mb-2 uppercase tracking-widest">// STATUS</strong>
+            <strong className="text-krea-white block mb-2 uppercase tracking-widest">{'//'} STATUS</strong>
             Ready for deployment. All systems nominal.
           </div>
         </div>
