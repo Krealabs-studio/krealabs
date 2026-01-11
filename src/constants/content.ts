@@ -47,14 +47,6 @@ export const PROJECTS: Project[] = [
   {
     status: "[ Deployed ]",
     statusColor: "text-krea-red",
-    title: "Kelvin Choo's Website",
-    description: "Personal website for Kelvin Choo.",
-    link: "https://kelza23.github.io/",
-    linkText: "View Website ->",
-  },
-  {
-    status: "[ Deployed ]",
-    statusColor: "text-krea-red",
     title: "Yuelin Liu's Website",
     description: "Portfolio website for Yuelin Liu.",
     link: "https://www.liuyuelin.dev/",
@@ -84,13 +76,6 @@ export const PARTNERS: Partner[] = [
 ];
 
 export const TEAM: TeamMember[] = [
-  {
-    name: "Kelvin Choo",
-    role: "AI Technical Specialist",
-    roleColor: "text-krea-red",
-    description:
-      "Specialises in optimisation, machine learning, deep learning, and AI.",
-  },
   {
     name: "Yuelin Liu",
     role: "Full Stack Developer",

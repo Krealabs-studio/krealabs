@@ -10,7 +10,7 @@ export default function JsonLd() {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "kelvinchoo96@gmail.com",
+      "email": "hello@krealabs.studio",
       "contactType": "customer service"
     },
     "description": "A one-stop engineering lab building complex ideas from the ground up, specializing in AI, Hard Tech, and Digital Innovation."

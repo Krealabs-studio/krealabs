@@ -10,14 +10,6 @@ window.projects = [
         description: "Computer vision-driven decision support system for sports analysis.",
         link: "#",
         linkText: "View Project ->"
-    },
-    {
-        status: "[ Deployed ]",
-        statusColor: "text-red", // Optional override
-        title: "Kelvin Choo's Website",
-        description: "Personal website for Kelvin Choo.",
-        link: "https://kelza23.github.io/",
-        linkText: "View Website ->"
     }
 ];
 
@@ -36,12 +28,6 @@ window.partners = [
 ];
 
 window.team = [
-    {
-        name: "Kelvin Choo",
-        role: "AI Technical Specialist",
-        roleColor: "text-red", // Highlight key roles
-        description: "Specialises in optimisation, machine learning, deep learning, and AI."
-    },
     {
         name: "Yuelin Liu",
         role: "Full Stack Developer",

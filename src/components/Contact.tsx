@@ -20,18 +20,20 @@ export default function Contact() {
                 Ready to initiate?
               </h4>
               <p className="text-krea-gray text-sm">
-                Our engineers are standing by to architect your next breakthrough.
+                Our engineers are standing by to architect your next
+                breakthrough.
                 <br />
                 System resources are available.
               </p>
             </div>
 
             <a
-              href="mailto:kelvinchoo96@gmail.com"
+              href="mailto:Krealabs.studio@gmail.com"
               className="px-8 py-4 border border-krea-border text-krea-light-gray hover:text-krea-white hover:bg-white/[0.02] transition-all uppercase text-[0.65rem] tracking-[0.2em] hover:border-krea-white inline-flex items-center gap-4 group"
             >
               <span className="w-1 h-1 bg-krea-white group-hover:bg-krea-red transition-colors" />
-              Contact Protocol <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              Contact Protocol{" "}
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
 
@@ -39,9 +41,11 @@ export default function Contact() {
           <div className="flex flex-col gap-4 border-t md:border-t-0 md:border-l border-krea-border pt-8 md:pt-0 md:pl-12 w-full md:w-auto">
             <div>
               <span className="block text-krea-white mb-2 uppercase text-[0.65rem] tracking-widest">
-                {'//'} Connect
+                {"//"} Connect
               </span>
-              <p className="text-krea-gray text-[0.65rem] mb-4">Visual experiments stream.</p>
+              <p className="text-krea-gray text-[0.65rem] mb-4">
+                Visual experiments stream.
+              </p>
             </div>
             <div className="flex flex-col gap-3">
               {SOCIALS.map((social) => (
