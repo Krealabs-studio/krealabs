@@ -52,6 +52,14 @@ export const PROJECTS: Project[] = [
     link: "https://www.liuyuelin.dev/",
     linkText: "View Website ->",
   },
+  {
+    status: "[ Deployed ]",
+    statusColor: "text-krea-red",
+    title: "Kelvin Choo's Website",
+    description: "Portfolio website for Kelvin Choo.",
+    link: "https://kelza23.github.io//",
+    linkText: "View Website ->",
+  },
 ];
 
 export const PARTNERS: Partner[] = [
@@ -80,19 +88,26 @@ export const TEAM: TeamMember[] = [
     name: "Yuelin Liu",
     role: "Full Stack Developer",
     roleColor: "text-krea-red",
-    description: "Expert in web development and user interface design.",
+    description: "Architecting digital interfaces and seamless user protocols.",
   },
   {
     name: "Samuel Gan",
     role: "Computer Vision Engineer",
     roleColor: "text-krea-red",
-    description: "Focuses on computer vision and image processing.",
+    description:
+      "Translating raw visual data into actionable machine intelligence.",
   },
   {
     name: "Fung Chan",
     role: "Graduate Engineer",
     roleColor: "text-krea-red",
-    description: "Focuses on computer vision and edge device development.",
+    description: "Synthesizing physical hardware constraints with edge AI logic.",
+  },
+  {
+    name: "Joanne Wong",
+    role: "Data Scientist",
+    roleColor: "text-krea-red",
+    description: "Distilling clear signal from complex, unstructured data noise.",
   },
 ];
 
